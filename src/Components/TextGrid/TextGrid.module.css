@@ -6,7 +6,7 @@
     display: flex; /* Standard */
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 4rem;
+    padding: 2rem;
     justify-items: center;
     justify-content: center;
     align-items: center;

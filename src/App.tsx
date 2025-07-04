@@ -94,7 +94,8 @@ export default function App() {
       }
       Style={{
         Background: colorLight,
-        TextColor: colorDark
+        TextColor: colorDark,
+        HRColor: colorDark
       }}
       />
 
