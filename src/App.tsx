@@ -5,6 +5,7 @@ import { TextSection } from "./Components/TextSection/TextSection";
 import Carousel, { CarouselFull } from "./Components/Carousel/Carousel";
 import { Footer } from "./Components/Footer/Footer";
 import Collapsible from "./Components/Collapsible/Collapsible";
+import FlexText from "./Components/FlexText/FlexText";
 
 // Colors
 const colorLighter = "rgb(235, 235, 235)";
@@ -217,6 +218,27 @@ export default function App() {
           Images={CarouselData2}
       />
 
+      <FlexText
+        Title="Visions"
+        TextData={[
+          [<>{LoremIpsum}</>, <>{LoremIpsum}</>]
+        ]}
+        Style={{
+          Background: colorLighter,
+          TextColor: colorDarker
+        }}
+      />
+
+      <FlexText
+        Title="Mission"
+        TextData={[
+          [<>{LoremIpsum}</>, <>{LoremIpsum}</>]
+        ]}
+        Style={{
+          Background: colorLight,
+          TextColor: colorDarker
+        }}
+      />
 
       <Footer 
         Title={
