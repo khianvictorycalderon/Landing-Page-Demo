@@ -31,6 +31,7 @@
 /* Label Hover */
 .label:hover {
     background: rgba(255, 255, 255, 0.11) !important;
+    transform: scale(1.1);
 }
 
 /* Media Query for Smaller Screens */
