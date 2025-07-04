@@ -4,6 +4,7 @@ import { Banner } from "./Components/Banner/Banner";
 import { TextGrid } from "./Components/TextGrid/TextGrid";
 import { TextSection } from "./Components/TextSection/TextSection";
 import Carousel from "./Components/Carousel/Carousel";
+import { Footer } from "./Components/Footer/Footer";
 
 // Colors
 const colorLighter = "rgb(235, 235, 235)";
@@ -72,6 +73,59 @@ export default function App() {
     },
   ];
 
+  const FooterSocialLinks = [
+    {
+      ImagePath: "images/github.png",
+      Href: "https://github.com/khianvictorycalderon",
+      Alt: "GitHub"
+    },
+    {
+      ImagePath: "images/upwork.png",
+      Href: "https://www.upwork.com/freelancers/~013a9c6d4543925f1e",
+      Alt: "Upwork"
+    },
+    {
+      ImagePath: "images/tiktok.png",
+      Href: "https://www.tiktok.com/@khian.vc",
+      Alt: "TikTok"
+    },
+  ];
+  const FooterMiscLinks = [
+    {
+      Text: "Blogs",
+      Href: "#"
+    },
+    {
+      Text: "Features",
+      Href: "#"
+    },
+    {
+      Text: "Articles",
+      Href: "#"
+    },
+    {
+      Text: "News",
+      Href: "#"
+    },
+    {
+      Text: "Tutorials",
+      Href: "#"
+    },
+    {
+      Text: "Privacy Policy",
+      Href: "#"
+    },
+    {
+      Text: "Terms and Conditions",
+      Href: "#"
+    },
+  ];
+  const MiscInfo = (
+    <>
+      <p>All rights reserved 2025.</p>
+    </>
+  );
+
   return (
     <>
 
@@ -129,6 +183,30 @@ export default function App() {
           TextColor: colorDark,
           Background: colorLight
         }}
+      />
+
+      <Footer 
+        Title={
+          <h4>
+              Website Created by <a href="">Khian</a>
+          </h4>
+        }
+        Description={<p>Want to help me?{" "}
+          <a 
+            href="https://khianvictorycalderon.github.io/donation/donate.html"
+            >
+            Donate to Khian Victory D. Calderon
+          </a>
+        </p>
+        }
+        Logo="images/Khian_Icon_Logo.png"
+        Style={{
+          Background: colorDarker,
+          TextColor: colorLighter
+        }}
+        Links={FooterSocialLinks}
+        MiscLinks={FooterMiscLinks}
+        MiscInfo={MiscInfo}
       />
 
     </>
