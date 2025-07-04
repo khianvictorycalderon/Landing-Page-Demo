@@ -3,9 +3,11 @@ import { NavBar } from "./Components/NavigationBar/NavBar";
 import { Banner } from "./Components/Banner/Banner";
 import { TextGrid } from "./Components/TextGrid/TextGrid";
 import { TextSection } from "./Components/TextSection/TextSection";
+import Carousel from "./Components/Carousel/Carousel";
 
 // Colors
-const colorLight = "rgb(235, 235, 235)";
+const colorLighter = "rgb(235, 235, 235)";
+const colorLight = "rgb(227, 227, 227)";
 const colorDark = "rgb(35, 35, 35)";
 const colorDarker = "rgb(20, 20, 20)";
 
@@ -49,6 +51,27 @@ export default function App() {
     },
   ];
 
+  const CarouselData = [
+    {
+      Title: "Our Facilities",
+      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      ImgPath: "images/wash1.jpg",
+      Alt: "Lorem Ipsum"
+    },
+    {
+      Title: "Extended Branches",
+      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      ImgPath: "images/wash2.jpg",
+      Alt: "Lorem Ipsum"
+    },
+    {
+      Title: "Customer Support",
+      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      ImgPath: "images/wash3.jpg",
+      Alt: "Lorem Ipsum"
+    },
+  ];
+
   return (
     <>
 
@@ -56,7 +79,7 @@ export default function App() {
         Buttons={ButtonList} 
         Style={{
           NavBarBackground: colorDarker,
-          ButtonTextColor: colorLight
+          ButtonTextColor: colorLighter
         }}
         Logo={{
           ImagePath: "images/Star.png",
@@ -80,7 +103,7 @@ export default function App() {
           <TextGrid
             Text={TextGridData}
             Style={{
-              Background: colorLight,
+              Background: colorLighter,
               TextBackground: "rgba(0, 0, 0, 0)",
               TextColor: colorDark,
               TextBorderColor: colorDark,
@@ -93,10 +116,19 @@ export default function App() {
         </>
       }
       Style={{
-        Background: colorLight,
+        Background: colorLighter,
         TextColor: colorDark,
         HRColor: colorDark
       }}
+      />
+
+      <Carousel
+        Images={CarouselData}
+        Style={{
+          HRColor: colorLighter,
+          TextColor: colorDark,
+          Background: colorLight
+        }}
       />
 
     </>
