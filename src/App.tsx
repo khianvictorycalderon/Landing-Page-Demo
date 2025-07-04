@@ -232,6 +232,7 @@ export default function App() {
       <FlexText
         Title="Mission"
         TextData={[
+          [<>{LoremIpsum}</>, <>{LoremIpsum}</>, <>{LoremIpsum}</>],
           [<>{LoremIpsum}</>, <>{LoremIpsum}</>]
         ]}
         Style={{
