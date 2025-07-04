@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { NavBar } from "./Components/NavigationBar/NavBar";
 import { Banner } from "./Components/Banner/Banner";
+import { TextGrid } from "./Components/TextGrid/TextGrid";
 
 export default function App() {
   
@@ -22,6 +23,25 @@ export default function App() {
       OnClick: () => alert("Services Clicked!"),
     },
   ];   
+
+  const TextGridData = [
+    {
+      Label: "Wash",
+      OnClick: () => alert("You've clicked me")
+    },
+    {
+      Label: "Dry",
+      OnClick: () => alert("You've clicked me")
+    },
+    {
+      Label: "Fold",
+      OnClick: () => alert("You've clicked me")
+    },
+    {
+      Label: "Iron",
+      OnClick: () => alert("You've clicked me")
+    },
+  ];
 
   return (
     <>
@@ -48,6 +68,18 @@ export default function App() {
         }
         BackgroundImage="images/wardrobe.jpg"
       />
+
+      <TextGrid
+        Text={TextGridData}
+        Style={{
+          Background: "rgb(237, 237, 237)",
+          TextBackground: "rgba(0, 0, 0, 0)",
+          TextColor: "rgb(35, 35, 35)",
+          TextBorderColor: "rgb(35, 35, 35)",
+          
+        }}
+      />
+
     </>
   )
 }
