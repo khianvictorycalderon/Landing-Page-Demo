@@ -130,21 +130,21 @@ export default function App() {
 
   const CarouselData2 = [
     {
-      Title: "Few Steps",
-      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      Title: "Fast Service",
+      Description: LoremIpsum,
       ImgPath: "images/clothe1.jpg",
       Alt: "Lorem Ipsum"
     },
     {
-      Title: "Extended Branches",
-      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      ImgPath: "images/wash2.jpg",
+      Title: "Cleaning Quality",
+      Description: LoremIpsum,
+      ImgPath: "images/clothe2.jpg",
       Alt: "Lorem Ipsum"
     },
     {
-      Title: "Customer Support",
-      Description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-      ImgPath: "images/wash3.jpg",
+      Title: "Customer-Friendly",
+      Description: LoremIpsum,
+      ImgPath: "images/clothe3.jpg",
       Alt: "Lorem Ipsum"
     },
   ];
@@ -210,11 +210,12 @@ export default function App() {
           TextColor: colorDark,
           Background: colorLight
         }}
+        ReversedOrder
       />
 
       <CarouselFull
           Images={CarouselData2}
-        />
+      />
 
 
       <Footer 
