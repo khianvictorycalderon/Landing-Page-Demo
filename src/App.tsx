@@ -6,6 +6,7 @@ import Carousel, { CarouselFull } from "./Components/Carousel/Carousel";
 import { Footer } from "./Components/Footer/Footer";
 import Collapsible from "./Components/Collapsible/Collapsible";
 import FlexText from "./Components/FlexText/FlexText";
+import { TwinList } from "./Components/TwinList/TwinList";
 
 // Colors
 const colorLighter = "rgb(235, 235, 235)";
@@ -151,6 +152,40 @@ export default function App() {
     },
   ];
 
+  const TwinListData = [
+    {
+      Title: "Jack",
+      Description: "Electrician & Technician & Co-Founder",
+      Image: "images/Jack.png",
+      ButtonLabel: "Learn more about Jack",
+      ButtonOnClick: () => alert("You clicked Jack")
+    },
+    {
+      Title: "Caleb",
+      Description: "Founder",
+      Image: "images/Caleb.png",
+      ButtonLabel: "Learn more about Caleb",
+      ButtonOnClick: () => alert("You clicked Caleb")
+    },
+    {
+      Title: "Marco",
+      Description: "Investor & Co-Owner",
+      Image: "images/Marco.png",
+      ButtonLabel: "Learn more about Marco",
+      ButtonOnClick: () => alert("You clicked Marco")
+    },
+  ];
+  const TwinListStyle={
+    Background:"rgb(0, 0, 0)",
+    ListBackground: colorLighter,
+    TextColor: colorDark,
+    ButtonBackground: colorBlue1,
+    ButtonTextColor: colorLight,
+    ReverseOrder: false, // false by default
+    HasShadow: true // true by default
+  }
+
+
   return (
     <>
 
@@ -250,6 +285,15 @@ export default function App() {
           </>
         }
         BackgroundImage="images/friends.jpg"
+      />
+
+      <TwinList
+        List={TwinListData}
+        Style={TwinListStyle}
+        Layout={{
+          FullSize: true, // false by default
+          HasButton: true // true by default
+        }}
       />
 
       <Footer 
