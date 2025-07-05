@@ -249,7 +249,7 @@ export default function App() {
             <p>Our business was able to expand with the collaborative effort of these people.</p>
           </>
         }
-        BackgroundImage="images/wardrobe.jpg"
+        BackgroundImage="images/friends.jpg"
       />
 
       <Footer 
