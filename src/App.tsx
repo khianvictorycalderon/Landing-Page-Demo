@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { NavBar } from "./Components/NavigationBar/NavBar";
 import { Banner } from "./Components/Banner/Banner";
 import { TextSection } from "./Components/TextSection/TextSection";
@@ -7,10 +7,12 @@ import { Footer } from "./Components/Footer/Footer";
 import Collapsible from "./Components/Collapsible/Collapsible";
 import FlexText from "./Components/FlexText/FlexText";
 import { TwinList } from "./Components/TwinList/TwinList";
+import { FormInput } from "./Components/FormInput/FormInput";
 
 // Colors
 const colorLighter = "rgb(235, 235, 235)";
 const colorLight = "rgb(227, 227, 227)";
+const colorBlue2 = "rgb(26, 94, 173)";
 const colorBlue1 = "rgb(8, 42, 81)";
 const colorDark = "rgb(35, 35, 35)";
 const colorDarker = "rgb(20, 20, 20)";
@@ -182,8 +184,37 @@ export default function App() {
     ButtonBackground: colorBlue1,
     ButtonTextColor: colorLight,
     ReverseOrder: false, // false by default
-    HasShadow: true // true by default
+    HasShadow: false // true by default
   }
+
+  const [username, setUsername] = useState<string>("");
+  const [contactNumber, setContactNumber] = useState<string>("");
+  const [feedback, setFeedback] = useState<{type: "error" | "warning" | "success", message: string} | null>();
+
+  const FormSubmitted = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    // Error: Required fields check
+    if (!username) {
+        setFeedback({
+            type: "error",
+            message: "Please fill in all required fields."
+        });
+        return;
+    }
+
+    // Success: All validations passed
+    setFeedback({
+        type: "success",
+        message: "Form submitted successfully!"
+    });
+
+    alert(`
+            Username: ${username}
+            Contact Number: ${contactNumber}
+    `);
+  };
+
 
 
   return (
@@ -293,6 +324,46 @@ export default function App() {
         Layout={{
           FullSize: true, // false by default
           HasButton: true // true by default
+        }}
+      />
+
+      <TextSection
+        Title="Contact Us"
+        Content={
+          <FormInput
+            Input={[
+              {
+                Label: "Name",
+                ID: "name",
+                Pattern: "[a-zA-z]+",
+                Value: username,
+                OnChange: (e) => setUsername(e.target.value)
+              },
+              {
+                Label: "Contact Number",
+                ID: "contact",
+                Pattern: "[0-9]+",
+                Value: contactNumber,
+                OnChange: (e) => setContactNumber(e.target.value)
+              },
+            ]}
+            FeedbackMessage={feedback}
+            OnSubmit={(e) => FormSubmitted(e)}
+            SubmitLabel="Custom Submit Message"
+            Style={{
+              Rows: 1,
+              TextColor: colorLight,
+              BackgroundColor: "rgba(0, 0, 0, 0)",
+              InputTextColor: colorDarker,
+              InputBackgroundColor: colorLighter,
+              ButtonTextColor: colorLighter,
+              ButtonButtonBackground: colorBlue2
+            }}
+          />
+        }
+        Style={{
+          TextColor: colorLighter,
+          Background: colorDark
         }}
       />
 
