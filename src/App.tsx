@@ -10,6 +10,7 @@ import FlexText from "./Components/FlexText/FlexText";
 // Colors
 const colorLighter = "rgb(235, 235, 235)";
 const colorLight = "rgb(227, 227, 227)";
+const colorBlue1 = "rgb(8, 42, 81)";
 const colorDark = "rgb(35, 35, 35)";
 const colorDarker = "rgb(20, 20, 20)";
 
@@ -132,19 +133,19 @@ export default function App() {
   const CarouselData2 = [
     {
       Title: "Fast Service",
-      Description: LoremIpsum,
+      Description: "Blah blah blah blah...",
       ImgPath: "images/clothe1.jpg",
       Alt: "Lorem Ipsum"
     },
     {
       Title: "Cleaning Quality",
-      Description: LoremIpsum,
+      Description: "Blah blah blah blah...",
       ImgPath: "images/clothe2.jpg",
       Alt: "Lorem Ipsum"
     },
     {
       Title: "Customer-Friendly",
-      Description: LoremIpsum,
+      Description: "Blah blah blah blah...",
       ImgPath: "images/clothe3.jpg",
       Alt: "Lorem Ipsum"
     },
@@ -156,7 +157,7 @@ export default function App() {
       <NavBar 
         Buttons={ButtonList} 
         Style={{
-          NavBarBackground: colorDarker,
+          NavBarBackground: colorDark,
           ButtonTextColor: colorLighter
         }}
         Logo={{
@@ -198,9 +199,9 @@ export default function App() {
         </>
       }
       Style={{
-        Background: colorLighter,
-        TextColor: colorDark,
-        HRColor: colorDark
+        Background: colorBlue1,
+        TextColor: colorLight,
+        HRColor: colorLight
       }}
       />
 
@@ -208,8 +209,8 @@ export default function App() {
         Images={CarouselData}
         Style={{
           HRColor: colorLighter,
-          TextColor: colorDark,
-          Background: colorLight
+          TextColor: colorDarker,
+          Background: colorLighter
         }}
         ReversedOrder
       />
@@ -236,9 +237,19 @@ export default function App() {
           [<>{LoremIpsum}</>, <>{LoremIpsum}</>]
         ]}
         Style={{
-          Background: colorLight,
-          TextColor: colorDarker
+          Background: colorBlue1,
+          TextColor: colorLight
         }}
+      />
+
+      <Banner
+          Title="Founders and Contributors"
+          Description={
+          <>
+            <p>Our business was able to expand with the collaborative effort of these people.</p>
+          </>
+        }
+        BackgroundImage="images/wardrobe.jpg"
       />
 
       <Footer 
